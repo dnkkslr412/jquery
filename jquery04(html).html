@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <!-- 제이쿼리 -->
+    <!--1.다운로드방식-->
+    <script src="js/jquery-3.6.0.min.js"></script>
+
+</head>
+<body>
+    
+    <div class="test"></div>
+    <div class="test2"></div>
+
+    <script>
+        //HTML형태로 삽입하기 html() - 태그사이의 값넣기
+
+        //자바스크립트문법
+        //document.querySelector(".test").innerHTML = "<a href='#'>kkk</a>";
+
+        //제이쿼리문법 - 제일 마지막에 쓴걸 적용한다
+        $(".test").html("<a href='#'>kkk</a>");
+        $(".test").html("");
+        $(".test").html("홍길동");
+
+        var a = $(".test").html();
+        console.log(a); //태그 사이의 값
+
+        //순수 문자열의 형태로 삽입하기 test()
+        //document.querySelector(".test2").textContent = "<h2>순수문자열로삽입</h2>";
+        $(".test2").text("<h2>순수문자열로삽입</h2>");
+
+    </script>
+
+</body>
+</html>

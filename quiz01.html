@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <!-- 제이쿼리 코드 -->
+    <script src="js/jquery-3.6.0.min.js"></script>
+    <!-- 프로그램 코드 -->
+    <script src="quiz01.js"></script>
+
+    <style>
+        .center {text-align: center;}
+        .content {margin: 0 auto; width: 800px; overflow: hidden; }
+        .left {float: left; width: 50%; box-sizing: border-box;}
+        .content, .inner {border: 1px solid #777;}
+        .content, .left{padding: 5px;}
+
+        .inner {height: 300px;}
+        img {width: 100%; height: 100%;}
+    </style>
+</head>
+<body>
+    
+     
+    <article>
+        <div class="center">
+            <h3>토글형태 활용하기</h3>
+            <button type="button" id="dark" class="dark">어둡게보기</button>
+            <button type="button" id="name" class="name">내용보기</button>
+        </div>
+    </article>
+
+    <hr>
+
+    <section>
+        <div class="content"><!-- 외곽상자 -->
+            <div class="left"><!-- 숨김상자 -->
+                <div class="inner"><!-- 안쪽상자 -->
+                    <img src="1.jpg" alt="이미지">
+                </div>
+            </div>
+            <div class="left"><!-- 숨김상자 -->
+                <div class="inner"><!-- 안쪽상자 -->
+                    <p>자바스크립트는 객체 기반의 스크립트 프로그래밍 언어이다. 
+                        이 언어는 웹 브라우저 내에서 주로 사용하며, 
+                        다른 응용 프로그램의 내장 객체에도 접근할 수 있는 기능을 가지고 있다. 
+                        또한 Node.js와 같은 런타임 환경과 같이 서버 프로그래밍에도 사용되고 있다.</p>
+                    <a href="#">위키백과</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- <script>
+        var dark = document.getElementById("dark");
+        var name1 = document.getElementById("name");
+
+        dark.onclick = function() {
+            //var body = document.querySelector("body");
+            var body = document.body; //위 식을 이와같이 가능
+            var list = document.querySelectorAll("h3, p, a"); //결과는 배열 글자 태그 한번에 가져오기
+            if(dark.className == "dark") {
+            for(var i = 0; i < list.length; i++) {
+                list[i].style.color = "white";
+            }
+            body.style.backgroundColor = "#000";
+            dark.innerHTML = "밝게보기"; //버튼의 내용
+            dark.className = "Bright"; //버튼의 클래스이름
+            }else {
+                for(var i = 0; i < list.length; i++) {
+                list[i].style.color = "#000";
+            }
+            body.style.backgroundColor = "#fff";
+            dark.innerHTML = "어둡게보기";
+            dark.className = "dark";
+            }
+        }
+
+        name1.onclick = function() {
+            var p1 = document.querySelector(".inner > p");
+            var a = document.querySelector(".inner > a")
+            if(name1.className == "name") {
+                name1.innerHTML = "이름보기"; //name1 내용변경
+                name1.className = "contents" //name1 클래스이름 변경
+                p1.innerHTML = "설계자 : 브렌던 아이크<br> 개발자: 넷스케이프, 모질라 재단, Ecma 인터내셔널<br> 패러다임: 프로그래밍 패러다임: 스크립트 언어, 객체 지향 프로그래밍 (프로토타입 기반 프로그래밍), 명령형 프로그래밍, 함수형 프로그래밍, 사건 기반 프로그래밍";
+                a.style.display = "none"; //a태그 숨김
+            }else {
+                name1.innerHTML = "내용보기";
+                name1.className = "name";
+                p1.innerHTML = "자바스크립트는 객체 기반의 스크립트 프로그래밍 언어이다. 이 언어는 웹 브라우저 내에서 주로 사용하며, 다른 응용 프로그램의 내장 객체에도 접근할 수 있는 기능을 가지고 있다. 또한 Node.js와 같은 런타임 환경과 같이 서버 프로그래밍에도 사용되고 있다.";
+                a.style.display = "inline"; //a태그 보임
+            }
+
+        }
+    </script> -->
+</body>
+</html>

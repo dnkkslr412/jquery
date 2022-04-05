@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <!-- 제이쿼리 -->
+    <script src="js/jquery-3.6.0.min.js"></script>
+
+</head>
+<body>
+    
+    <script>
+        $(document).ready(function() {
+
+            //이벤트 등록
+            //제이쿼리 이벤트는 (선택자 뒤에 on이 빠지고, 실행할 함수를 익명함수로 전달합니다)
+            $("#btn").click(function() {
+                alert("이벤트 등록됨");
+            });
+
+            //제이쿼리는 여러태그가 선택되더라도 한번에 이벤트를 적용할 수 있습니다
+            $(".btn2").click(function(e) {
+                //alert("이벤트 등록됨");
+                
+                console.log($(this)); 
+                console.log($(e.target)); //이벤트 첫번째 매개변수에 이벤트의 대한 정보를 넣어준다
+                
+            });
+
+            //ex
+            $("#tag").keyup(function() {
+                console.log( $(this).val() );
+            });
+        });
+    </script>
+
+
+    <button type="button" id="btn">이벤트</button>
+
+    <button type="button" class="btn2">이벤트</button>
+    <button type="button" class="btn2">이벤트</button>
+
+    <input type="text" id="tag">
+
+</body>
+</html>

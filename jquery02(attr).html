@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <!-- 제이쿼리 -->
+    <!--1.다운로드방식-->
+    <script src="js/jquery-3.6.0.min.js"></script>
+
+</head>
+<body>
+    
+    <input type="text" id="test01" readonly><br>
+
+    <img src="1.png" class="test02">
+
+    <img src="2.png" class="test03" width="50" height="50">
+
+    <script>
+        var a1 = document.getElementById("test01").id; //js문법
+        console.log(a1);
+
+        //attr("속성명")
+        //attr("속성명", "변경값")
+        //attr({여러값})
+        var a2 = $("#test01").attr("id"); //jquery문법
+        console.log(a2);
+
+        var a3 = $(".test02").attr("class"); //test02의 클래스속성
+        console.log(a3);
+
+        var a4 = $(".test02").attr("src");
+        console.log(a4);
+
+        //값의 변경
+        $(".test02").attr("src", "profile.png");
+
+        //여러값의 변경
+        $(".test02").attr({
+            src: "profile2.png",
+            width: "100",
+            alt: "helloworld"
+        })
+
+        //클래스 test03태그를 width, heigh를 변경
+        $(".test03").attr({
+            src: "hello",
+            width: "100",
+            height: "100"
+        });
+    </script>
+
+</body>
+</html>

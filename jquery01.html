@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <!-- 제이쿼리 -->
+    <!--1.다운로드방식-->
+    <script src="js/jquery-3.6.0.min.js"></script>
+    
+    <!-- 2.링크방식
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    -->
+
+</head>
+<body>
+    
+    <input type="text" id="apple" value="홍길동">
+    <input type="text" class="melon" value="이순신">
+    <input type="hidden" value="신사임당">
+
+    <script>
+        /*
+        제이쿼리는 $("선택자")로 요소를 선택합니다. 반환으로 제이쿼리 객체를 돌려줍니다
+        $("선택자")]인덱스]로 순수 태그를 취득할 수 있으며
+        결론적으로 $("선택자").제이쿼리함수() 형태로 사용하게 됩니다
+        */
+        var a = document.getElementById("apple");
+        console.log(a); //JS코드~~ 
+
+        var a2 = $("#apple");
+        console.log(a2);
+
+        var a3 = $("#apple")[0];
+        console.log(a3);
+
+        console.log("--------------------------------------------------");
+
+        //js문법
+        var b = document.querySelector(".melon");
+        console.log(b.value);
+
+        //jquery문법
+        var b2 = $(".melon").val();
+        console.log(b2);
+        //$(".melon").value(); 잘못된 표현
+
+        var c = $("input[type=hidden]").val();
+        console.log(c);
+
+    </script>
+
+</body>
+</html>

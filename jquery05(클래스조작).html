@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <!-- 제이쿼리 -->
+    <!--1.다운로드방식-->
+    <script src="js/jquery-3.6.0.min.js"></script>
+
+</head>
+<body>
+    
+    <button id="btn" class="btn btn-default">클래스조작테스트</button>
+
+    <script>
+        //JS코드
+        //document.getElementById("btn").classList.add("myBtn"); //추가
+        //document.getElementById("btn").classList.remove("myBtn"); //삭제
+
+        //jquery
+        $("#btn").addClass("myBtn"); //추가
+        $("#btn").removeClass("myBtn"); //삭제
+
+    </script>
+
+
+    <button id="toggle" class="dark">토글조작테스트</button>
+
+    <script>
+        //토글 - 1개의 버튼으로 클래스를 조작해서 2가지 기능을 수행
+        //js코드
+        // document.getElementById("toggle").onclick = function() {
+        //     document.getElementById("toggle").classList.toggle("aaa");
+        // }
+
+        //jquery
+        document.getElementById("toggle").onclick = function() {
+            $("#toggle").toggleClass("aaa");
+        }
+
+    </script>
+
+    <hr>
+    <style>
+        .aaa {}
+    </style>
+
+    <button id="test" class="test aaa">실습</button>
+
+    <script>
+        //test버튼의 addClass, removeClass를 이용해서 
+        //haclass("aaa")으로 클래스포함 여부
+
+        //aaa클래스가 있다면 body의 배경색을 검은색
+        //bbb클래스가 있다면 배경을 흰색
+        document.getElementById("test").onclick = function() {
+            
+            
+            if($("#test").hasClass("aaa")) {
+
+                $("#test").addClass("bbb"); //bbb추가
+                $("#test").removeClass("aaa"); //aaa삭제
+                $("body").css("backgroundColor", "black");//body 변경
+
+            }else if($("#test").hasClass("bbb")){
+
+                $("#test").addClass("aaa"); 
+                $("#test").removeClass("bbb"); 
+                $("body").css("backgroundColor", "white");//body 변경
+            }
+
+        }
+    </script>
+
+
+</body>
+</html>
