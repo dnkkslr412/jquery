@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <!-- 제이쿼리 -->
+    <script src="js/jquery-3.6.0.min.js"></script>
+
+</head>
+<body>
+    
+    <script>
+        //ajax의 post방식
+        // $.ajax({
+        //     type: "post", //요청방식
+        //     url: "http://localhost:8181/ajaxTest01", //요청주소
+        //     data: JSON.stringify({"id":"kkk123", "name":"홍길동", "num":1}), //보낼데이터
+        //     dataType: "json", //생략가능(받을 데이터의 형식) - 생략하면 자동 json형식("json", "text", "xml", "html", "jsonp")
+        //     contentType: "application/json", //기본값으로 form형식을 가지는데, 보내는 데이터에 대한 타입을 적는다
+        //     success: function(data) { //성공 콜백
+        //         console.log(data);
+        //     },
+        //     error: function(status, err) { //실패 콜백(생략가능)
+        //         console.log(status);
+        //     }
+
+        // });
+
+        //xml형식
+        $.ajax({
+            type: "post", //요청방식
+            url: "http://localhost:8181/ajaxTest01", //요청주소
+            data: JSON.stringify({"id":"kkk123", "name":"홍길동", "num":1}), //보낼데이터
+            dataType: "xml", //생략가능(받을 데이터의 형식) - 생략하면 자동 json형식("json", "text", "xml", "html", "jsonp")
+            contentType: "application/json", //기본값으로 form형식을 가지는데, 보내는 데이터에 대한 타입을 적는다
+            success: function(data) { //성공 콜백
+                console.log(data);
+            },
+            error: function(status, err) { //실패 콜백(생략가능)
+                console.log(status);
+            }
+
+        });
+    </script>
+
+</body>
+</html>

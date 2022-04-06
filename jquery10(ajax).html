@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <!-- 제이쿼리 -->
+    <script src="js/jquery-3.6.0.min.js"></script>
+
+</head>
+<body>
+    
+    <script>
+        console.log(1);
+
+        //get방식 ajax요청
+        //요청주소 : https://yts.mx/api/v2/list_movies.json
+        //$.getJSON(요청주소, 석세스콜백)
+        $.getJSON( "https://yts.mx/api/v2/list_movies.json?limit=10&sort_by=rating",  
+                    function(json) {
+                        console.log(json);
+                        console.log(2);
+                    });
+                    
+                    console.log(3);
+    </script>
+
+</body>
+</html>
